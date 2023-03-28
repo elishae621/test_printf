@@ -5,7 +5,7 @@
  *@valist: valist
  *sum: int
  */
-void print_hex_uppercase(long decimalNumber, int *sum)
+void print_hex_uppercase(long decimalNumber, int *sum, char flag)
 {
     long int quotient;
     int i = 1, j, temp;
@@ -23,6 +23,8 @@ void print_hex_uppercase(long decimalNumber, int *sum)
         hexadecimalNumber[i++] = temp;
         quotient = quotient / 16;
     }
+    if (decimalNumber != 0 && flag == '#')
+        *sum += _putstring("0X");
     for (j = i - 1; j > 0; j--)
         *sum += _putchar(hexadecimalNumber[j]);
 }

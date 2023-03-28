@@ -97,15 +97,15 @@ int _printf(const char *format, ...)
                 break;
 
             case 'o':
-                print_octal(va_arg(valist, unsigned int), sum);
+                print_octal(va_arg(valist, unsigned int), sum, flag);
                 break;
 
             case 'x':
-                print_hex_smallcase(va_arg(valist, long), sum);
+                print_hex_smallcase(va_arg(valist, long), sum, flag);
                 break;
 
             case 'X':
-                print_hex_uppercase(va_arg(valist, long), sum);
+                print_hex_uppercase(va_arg(valist, long), sum, flag);
                 break;
 
             case 'R':
