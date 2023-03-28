@@ -27,8 +27,21 @@ void print_number(int n, int *sum, char flag)
     }
     else
     {
-        if (flag == '+')
+        switch (flag)
+        {
+        case '+':
             *sum += _putchar('+');
+            break;
+        case ' ':
+            *sum += _putchar(' ');
+            break;
+        case '0':
+            *sum += _putchar('0');
+            break;
+
+        default:
+            break;
+        }
     }
     if (num > 9)
     {

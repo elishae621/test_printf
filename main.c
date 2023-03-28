@@ -33,6 +33,10 @@ int main()
     // _printf("%r\n", "A long string");
     _printf("Positive:[%+i]\n", 762534);
     printf("Positive:[%+d]\n", 762534);
+    _printf("Positive:[% i]\n", 762534);
+    printf("Positive:[% d]\n", 762534);
+    _printf("Positive:[%0i]\n", 762534);
+    printf("Positive:[%0d]\n", 762534);
     // _printf("Address:[%p]\n", addr);
     // printf("Address:[%p]\n", addr);
     len = _printf("Percent:[%%]\n");
