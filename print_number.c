@@ -1,6 +1,6 @@
 #include "main.h"
 
-void print_number(unsigned int n, int *sum)
+void print_number(int n, int *sum)
 {
     unsigned int num = n;
     char tmp;
