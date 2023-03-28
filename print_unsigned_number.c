@@ -1,8 +1,8 @@
 #include "main.h"
 
-void print_number(int n, int *sum)
+void print_unsigned_number(unsigned int n, int *sum)
 {
-    int num = n;
+    unsigned int num = n;
     char tmp;
 
     if (n < 0)

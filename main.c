@@ -30,6 +30,7 @@ int main()
     printf("String:[%s]\n", "I am a string !");
     _printf("%S\n", "Best\nSchool");
     _printf("%R\n", "Encrypted string");
+    _printf("%r\n", "A long string");
     // _printf("Address:[%p]\n", addr);
     // printf("Address:[%p]\n", addr);
     len = _printf("Percent:[%%]\n");

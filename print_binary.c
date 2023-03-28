@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdarg.h>
 #include <stdlib.h>
 
 /**
@@ -7,12 +6,11 @@
  *@num: int num
  *sum: int sum
  */
-void print_binary(va_list valist, int *sum)
+void print_binary(int num, int *sum)
 {
-    int num = 0, i, n;
+    int i, n;
     int *a;
 
-    num = va_arg(valist, int);
     a = malloc(20 * sizeof(int));
 
     for (i = 0; num >= 0; i++)

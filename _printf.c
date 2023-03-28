@@ -33,14 +33,16 @@ int _printf(const char *format, ...)
                 break;
             case 'd':
             case 'i':
-            case 'u':
                 print_number(va_arg(valist, int), sum);
+                break;
+            case 'u':
+                print_unsigned_number(va_arg(valist, int), sum);
                 break;
             case '%':
                 *sum += _putchar('%');
                 break;
             case 'b':
-                print_binary(valist, sum);
+                print_binary(va_arg(valist, int), sum);
                 break;
 
             case 'o':
@@ -48,15 +50,19 @@ int _printf(const char *format, ...)
                 break;
 
             case 'x':
-                print_hex_smallcase(valist, sum);
+                print_hex_smallcase(va_arg(valist, long), sum);
                 break;
 
             case 'X':
-                print_hex_uppercase(valist, sum);
+                print_hex_uppercase(va_arg(valist, long), sum);
                 break;
 
             case 'R':
                 print_rot13(va_arg(valist, char *), sum);
+                break;
+
+            case 'r':
+                print_reverse_string(va_arg(valist, char *), sum);
                 break;
 
             default:

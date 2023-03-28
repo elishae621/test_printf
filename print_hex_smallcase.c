@@ -1,13 +1,11 @@
 #include "main.h"
-#include <stdarg.h>
 
 /**
  *print_hex_smallcase - prints hex in lowercase
  *@valist: valist
  */
-void print_hex_smallcase(va_list valist, int *sum)
+void print_hex_smallcase(long decimalNumber, int *sum)
 {
-    long decimalNumber = va_arg(valist, long);
     long int quotient;
     int i = 1, j, temp;
     char hexadecimalNumber[100];
