@@ -3,11 +3,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
+
+int in(char *arr, int len, const char *target)
+{
+    int i;
+
+    for (i = 0; i < len; i++)
+    {
+        if (strncmp(&arr[i], target, strlen(target)) == 0)
+        {
+            return 1;
+        }
+    }
+    return 0;
+}
 
 int _printf(const char *format, ...)
 {
     va_list valist;
-    int *sum;
+    int *sum, width = 0, precision = 0;
+    char *flags, specifier;
+    char flag;
+
+    flags = malloc(sizeof(char) * 6);
+
+    flags = "-+ #0";
+
     sum = malloc(sizeof(int));
     *sum = 0;
 
@@ -18,7 +40,25 @@ int _printf(const char *format, ...)
         if (*format == '%')
         {
             format++;
-            switch (*format)
+            // %[flags][width][.precision][length]specifier
+            if (in(flags, 5, format))
+            {
+                flag = *format;
+            }
+            else if (isdigit(*format))
+            {
+                width = *format;
+            }
+            else if (*format == '.')
+            {
+                format++;
+                precision = *format;
+            }
+            else
+            {
+                specifier = *format;
+            }
+            switch (specifier)
             {
             case 'c':
                 *sum += _putchar(va_arg(valist, int));
@@ -68,6 +108,10 @@ int _printf(const char *format, ...)
             default:
                 break;
             }
+            printf("flag: %c", flag);
+            printf("precision: %d", precision);
+            printf("width: %d", width);
+            printf("specifier: %c", specifier);
         }
         else
         {
