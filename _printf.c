@@ -5,18 +5,19 @@
 #include <string.h>
 #include <ctype.h>
 
-int in(char *arr, int len, const char *target)
+int in(char *arr, const char *target)
 {
-    int i;
+    int found = 0;
 
-    for (i = 0; i < len; i++)
+    while (*arr != '\0')
     {
-        if (strncmp(&arr[i], target, strlen(target)) == 0)
+        if (*arr == *target)
         {
-            return 1;
+            found = 1;
         }
+        arr++;
     }
-    return 0;
+    return found;
 }
 
 int _printf(const char *format, ...)
@@ -41,18 +42,24 @@ int _printf(const char *format, ...)
         {
             format++;
             // %[flags][width][.precision][length]specifier
-            if (in(flags, 5, format))
+            if (in(flags, format))
             {
                 flag = *format;
+                format++;
+                specifier = *format;
             }
             else if (isdigit(*format))
             {
                 width = *format;
+                format++;
+                specifier = *format;
             }
             else if (*format == '.')
             {
                 format++;
                 precision = *format;
+                format++;
+                specifier = *format;
             }
             else
             {
@@ -71,16 +78,20 @@ int _printf(const char *format, ...)
             case 'S':
                 print_S(va_arg(valist, char *), sum);
                 break;
+
             case 'd':
             case 'i':
-                print_number(va_arg(valist, int), sum);
+                print_number(va_arg(valist, int), sum, flag);
                 break;
+
             case 'u':
                 print_unsigned_number(va_arg(valist, int), sum);
                 break;
+
             case '%':
                 *sum += _putchar('%');
                 break;
+
             case 'b':
                 print_binary(va_arg(valist, int), sum);
                 break;
@@ -108,10 +119,10 @@ int _printf(const char *format, ...)
             default:
                 break;
             }
-            printf("flag: %c", flag);
-            printf("precision: %d", precision);
-            printf("width: %d", width);
-            printf("specifier: %c", specifier);
+            printf("\nflag: %c\n", flag);
+            printf("precision: %d\n", precision);
+            printf("width: %d\n", width);
+            printf("specifier: %c\n", specifier);
         }
         else
         {

@@ -7,7 +7,7 @@ int _putstring(char *s);
 void print_hex_smallcase(long decimalNumber, int *sum);
 void print_hex_uppercase(long decimalNumber, int *sum);
 void print_hex(long decimalNumber, int *sum);
-void print_number(int n, int *sum);
+void print_number(int n, int *sum, char flag);
 void print_unsigned_number(unsigned int n, int *sum);
 void print_octal(int num, int *sum);
 void print_binary(int num, int *sum);

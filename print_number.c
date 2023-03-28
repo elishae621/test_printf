@@ -1,6 +1,21 @@
 #include "main.h"
 
-void print_number(int n, int *sum)
+void helper_print_number(int n, int *sum)
+{
+    int num = n;
+    char tmp;
+
+    if (num > 9)
+    {
+
+        helper_print_number(num / 10, sum);
+    }
+
+    tmp = num % 10 + '0';
+    *sum += _putchar(tmp);
+}
+
+void print_number(int n, int *sum, char flag)
 {
     int num = n;
     char tmp;
@@ -10,10 +25,15 @@ void print_number(int n, int *sum)
         *sum += _putchar('-');
         num = -num;
     }
+    else
+    {
+        if (flag == '+')
+            *sum += _putchar('+');
+    }
     if (num > 9)
     {
 
-        print_number(num / 10, sum);
+        helper_print_number(num / 10, sum);
     }
 
     tmp = num % 10 + '0';

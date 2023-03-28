@@ -13,7 +13,7 @@ void print_unsigned_number(unsigned int n, int *sum)
     if (num > 9)
     {
 
-        print_number(num / 10, sum);
+        print_unsigned_number(num / 10, sum);
     }
 
     tmp = num % 10 + '0';
