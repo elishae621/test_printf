@@ -56,7 +56,6 @@ int _printf(const char *format, ...)
                 break;
 
             case 'R':
-                printf("yes");
                 print_rot13(va_arg(valist, char *), sum);
                 break;
 
