@@ -97,7 +97,7 @@ int _printf(const char *format, ...)
                 break;
 
             case 'o':
-                print_octal(va_arg(valist, int), sum);
+                print_octal(va_arg(valist, unsigned int), sum);
                 break;
 
             case 'x':
