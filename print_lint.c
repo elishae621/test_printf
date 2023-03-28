@@ -1,18 +1,19 @@
 #include "main.h"
+
 /**
- *helper_print_number - helper_print_number
+ *helper_print_lint - helper_print_lint
  *@n: int n
  *@sum: sum of bytes written
  */
-void helper_print_number(int n, int *sum)
+void helper_print_lint(long int n, int *sum)
 {
-	int num = n;
+	long int num = n;
 	char tmp;
 
 	if (num > 9)
 	{
 
-		helper_print_number(num / 10, sum);
+		helper_print_lint(num / 10, sum);
 	}
 
 	tmp = num % 10 + '0';
@@ -20,14 +21,14 @@ void helper_print_number(int n, int *sum)
 }
 
 /**
- *print_number - print_number
+ *print_lint - print_lint
  *@n: int n
  *@sum: sum of bytes written
  *@flag: flag
  */
-void print_number(int n, int *sum, char *flag)
+void print_lint(long int n, int *sum, char *flag)
 {
-	int num = n;
+	long int num = n;
 	char tmp;
 
 	if (n < 0)
@@ -47,7 +48,7 @@ void print_number(int n, int *sum, char *flag)
 	if (num > 9)
 	{
 
-		helper_print_number(num / 10, sum);
+		helper_print_lint(num / 10, sum);
 	}
 
 	tmp = num % 10 + '0';

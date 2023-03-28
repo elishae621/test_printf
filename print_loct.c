@@ -4,15 +4,15 @@
 #include <limits.h>
 
 /**
- *print_octal - prints octal
- *@num: int num
+ *print_oct - prints octal
+ *@n: long num
  *@sum: int sum
  *@flag: flag
  */
-void print_octal(unsigned int n, int *sum, char *flag)
+void print_loct(unsigned long n, int *sum, char *flag)
 {
 	char buffer[1024];
-	unsigned int num = n;
+	unsigned long num = n;
 	unsigned long int i = 0;
 
 	if (num == 0)

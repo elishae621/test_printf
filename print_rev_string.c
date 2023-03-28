@@ -10,25 +10,25 @@
  */
 void print_reverse_string(char *str, int *sum)
 {
-    char *nstr;
-    int lengthOfArray = 0;
-    int i = 0;
+	char *nstr;
+	int lengthOfArray = 0;
+	int i = 0;
 
-    nstr = malloc(sizeof(str));
+	nstr = malloc(sizeof(str));
 
-    strcpy(nstr, str);
+	strcpy(nstr, str);
 
-    while (str[i] != '\0')
-    {
-        lengthOfArray++;
-        i++;
-    }
+	while (str[i] != '\0')
+	{
+		lengthOfArray++;
+		i++;
+	}
 
-    for (i = 0; i < lengthOfArray / 2; i++)
-    {
-        char temp = *(nstr + i);
-        *(nstr + i) = *(nstr + (lengthOfArray - i - 1));
-        *(nstr + (lengthOfArray - i - 1)) = temp;
-    }
-    *sum += _putstring(nstr);
+	for (i = 0; i < lengthOfArray / 2; i++)
+	{
+		char temp = *(nstr + i);
+		*(nstr + i) = *(nstr + (lengthOfArray - i - 1));
+		*(nstr + (lengthOfArray - i - 1)) = temp;
+	}
+	*sum += _putstring(nstr);
 }
