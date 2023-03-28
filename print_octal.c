@@ -8,7 +8,7 @@
  *@num: int num
  *sum: int sum
  */
-void print_octal(unsigned int n, int *sum, char flag)
+void print_octal(unsigned int n, int *sum, char *flag)
 {
     char buffer[1024];
     unsigned int num = n;
@@ -20,7 +20,7 @@ void print_octal(unsigned int n, int *sum, char flag)
     }
     else
     {
-        if (flag == '#')
+        if (found_in(flag, '#'))
             *sum += _putchar('0');
         while (num != 0 && i < sizeof(buffer))
         {

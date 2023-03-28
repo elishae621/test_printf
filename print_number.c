@@ -15,7 +15,7 @@ void helper_print_number(int n, int *sum)
     *sum += _putchar(tmp);
 }
 
-void print_number(int n, int *sum, char flag)
+void print_number(int n, int *sum, char *flag)
 {
     int num = n;
     char tmp;
@@ -27,21 +27,12 @@ void print_number(int n, int *sum, char flag)
     }
     else
     {
-        switch (flag)
-        {
-        case '+':
+        if (found_in(flag, '+'))
             *sum += _putchar('+');
-            break;
-        case ' ':
+        if (found_in(flag, ' '))
             *sum += _putchar(' ');
-            break;
-        case '0':
+        if (found_in(flag, '0'))
             *sum += _putchar('0');
-            break;
-
-        default:
-            break;
-        }
     }
     if (num > 9)
     {

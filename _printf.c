@@ -5,29 +5,15 @@
 #include <string.h>
 #include <ctype.h>
 
-int in(char *arr, const char *target)
-{
-    int found = 0;
-
-    while (*arr != '\0')
-    {
-        if (*arr == *target)
-        {
-            found = 1;
-        }
-        arr++;
-    }
-    return found;
-}
-
 int _printf(const char *format, ...)
 {
     va_list valist;
-    int *sum, width = 0, precision = 0;
+    int *sum, width = 0, precision = 0, no_of_flags = 0;
     char *flags, specifier;
-    char flag;
+    char *flag;
 
     flags = malloc(sizeof(char) * 6);
+    flag = malloc(sizeof(char) * 6);
 
     flags = "-+ #0";
 
@@ -42,9 +28,9 @@ int _printf(const char *format, ...)
         {
             format++;
             // %[flags][width][.precision][length]specifier
-            if (in(flags, format))
+            if (found_in(flags, *format))
             {
-                flag = *format;
+                *(flag + no_of_flags++) = *format;
                 format++;
                 specifier = *format;
             }
@@ -119,7 +105,7 @@ int _printf(const char *format, ...)
             default:
                 break;
             }
-            printf("\nflag: %c\n", flag);
+            printf("\nflag: %s\n", flag);
             printf("precision: %d\n", precision);
             printf("width: %d\n", width);
             printf("specifier: %c\n", specifier);
