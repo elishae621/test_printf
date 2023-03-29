@@ -14,7 +14,6 @@ void print_hex(long decimalNumber, int *sum)
 	while (quotient != 0)
 	{
 		temp = quotient % 16;
-		// To convert integer into character
 		if (temp < 10)
 			temp = temp + 48;
 		else

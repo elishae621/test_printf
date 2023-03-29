@@ -5,7 +5,7 @@
 
 /**
  *print_octal - prints octal
- *@num: int num
+ *@n: int num
  *@sum: int sum
  *@flag: flag
  */

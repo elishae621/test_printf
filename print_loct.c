@@ -4,7 +4,7 @@
 #include <limits.h>
 
 /**
- *print_oct - prints octal
+ *print_loct - prints long octal
  *@n: long num
  *@sum: int sum
  *@flag: flag

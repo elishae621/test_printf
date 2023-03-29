@@ -16,7 +16,6 @@ void print_hex_uppercase(long decimalNumber, int *sum, char *flag)
 	while (quotient != 0)
 	{
 		temp = quotient % 16;
-		// To convert integer into character
 		if (temp < 10)
 			temp = temp + 48;
 		else

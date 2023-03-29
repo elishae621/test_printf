@@ -5,7 +5,15 @@
 #include <string.h>
 #include <ctype.h>
 
-void _exec_specifier(char *s, va_list valist, int *sum, char *flag)
+/**
+ * _exec_specifier - run specifer
+ * @s: specifer
+ * @valist: valist
+ * @sum: total number of bytes written
+ * @flag: flag
+ * Return: no of bytes written
+ */
+void _exec_specifier(char s, va_list valist, int *sum, char *flag)
 {
 	char specifier = s;
 
@@ -52,8 +60,9 @@ void _exec_specifier(char *s, va_list valist, int *sum, char *flag)
 		break;
 	}
 }
+
 /**
- * _printf: prints a string
+ * _printf - prints a string
  * @format: printing format
  * Return: no of bytes written
  */
@@ -86,19 +95,21 @@ int _printf(const char *format, ...)
 				format++;
 				specifier = *format;
 			}
-			/* if (isdigit(*format))
-			 {
-				 width = *format;
-				 format++;
-				 specifier = *format;
-			 }
-			 if (*format == '.')
-			 {
-				 format++;
-				 precision = *format;
-				 format++;
-				 specifier = *format;
-			 }*/
+			/*
+			 *if (isdigit(*format))
+			 * {
+			 *	 width = *format;
+			 *	 format++;
+			 *	 specifier = *format;
+			 * }
+			 * if (*format == '.')
+			 * {
+			 *	 format++;
+			 *	 precision = *format;
+			 *	 format++;
+			 *	 specifier = *format;
+			 * }
+			 */
 			specifier = *format;
 			_exec_specifier(specifier, valist, sum, flag);
 		}

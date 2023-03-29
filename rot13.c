@@ -5,7 +5,7 @@
 #include <string.h>
 
 /**
- * rot13 - Encodes a string using rot13.
+ * print_rot13 - Encodes a string using rot13.
  * @str: The string to be encoded.
  * @sum: Sum of bytes written
  */

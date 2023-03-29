@@ -4,7 +4,7 @@
 /**
  *print_binary - prints binary
  *@num: int num
- *sum: sum of bytes written
+ *@sum: sum of bytes written
  */
 void print_binary(int num, int *sum)
 {

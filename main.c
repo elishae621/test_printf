@@ -4,10 +4,9 @@
 
 /**
  * main - check code
- *
  * Return: On success 1.
  */
-int main()
+int main(void)
 {
 	int len;
 	int len2;
@@ -51,5 +50,5 @@ int main()
 	_printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
 
-	return 0;
+	return (0);
 }
